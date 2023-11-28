@@ -4,68 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(to bottom, #3498db, #2c3e50);
-      color: #fff;
-    }
-
-    #app {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    h1 {
-      color: #2c3e50;
-    }
-
-    input {
-      padding: 10px;
-      font-size: 16px;
-      margin-bottom: 10px;
-      width: 200px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #2ecc71;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #27ae60;
-    }
-
-    #weather-info {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+<script src="tailwind.config.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div id="app">
-    <h1>Weather App</h1>
-    <input type="text" id="city" placeholder="karachi">
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weather-info">
+    <h1 class="headings text-5xl font-bold mb-5">Weather</h1>
+    <input class="input" type="text" id="city" placeholder="Enter City Name">
+    <button class="buttn" onclick="getWeather()"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <div class="flex flex-col justify-center items-center">
+      <img class="images" src="images/clouds.png">
+      <h1 id="cityName" class="text-black text-4xl font-bold"></h1>
+      <h1 id="temp" class="text-black text-4xl font-bold mt-5"></h1>
     </div>
+    <div id="weather-info" class="mt-5 flex justify-center items-center flex-col">
+  <div class="flex items-center justify-between cont">
+    <img class="humidity" src="images/humidity.png" alt="">
+    <p class="text-black text-3xl mx-3">Humidity:</p>
+    <p class="text-black text-3xl" id="humid">60%</p>
+  </div>
+  <div class="flex items-center justify-between cont">
+    <img class="humidity" src="images/wind.png" alt="">
+    <p class="text-black text-3xl mx-3">Wind:</p>
+    <p class="text-black text-3xl" id="speed">60%</p>
+  </div>
+    </div>
+
   </div>
 
   <script src="app.js">
